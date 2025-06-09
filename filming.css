@@ -1,0 +1,483 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+
+}
+
+/* common styles of font */
+
+.navbar a {
+    font-family: "IBM Plex Serif", serif;
+    font-weight: 200;
+    font-style: normal;
+
+    opacity: 90%;
+}
+
+h5 {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'benz';
+    src: url('./Fonts/benz_grotesk/Benz\ Grotesk.ttf') format('truetype');
+}
+
+h1,
+h4 {
+    font-family: 'benz', sans-serif;
+}
+
+body {
+    background-color: black;
+}
+
+/* navbar section */
+.navbar {
+    background-color: #3a3a3a !important;
+    padding: 20px 0px;
+    height: 15vh;
+
+    opacity: 1;
+
+    animation-name: navbar-1;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes navbar-1 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+.navbar a {
+    color: white !important;
+}
+
+.dropdown-menu {
+    background-color: #252525 !important;
+}
+
+.navbar h5 {
+    color: white;
+    opacity: 85%;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    margin-left: 10px;
+
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(247, 236, 236, 0.3);
+    /* soft white glow */
+}
+
+@media (max-width:992px) {
+    .navbar-toggler {
+        padding-bottom: 20px;
+    }
+
+    .navbar img {
+        margin-top: -15px;
+    }
+
+    .navbar h5 {
+        margin-top: 15px;
+    }
+
+}
+
+/* Apply only on screens smaller than 992px */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background: rgba(255, 255, 255, 0.1);
+        /* Transparent white */
+
+        backdrop-filter: blur(10px);
+        /* Glass effect */
+
+        -webkit-backdrop-filter: blur(10px);
+        /* Safari support */
+
+        border-radius: 5px;
+        padding: 1rem;
+        margin-top: 10px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        z-index: 999 !important;
+    }
+
+    .navbar {
+        position: relative;
+        z-index: 1000;
+    }
+}
+
+/* navbar section ends ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+
+
+
+/* light section startss */
+
+.light {
+    height: 85vh;
+}
+
+.light-wrapper {
+    height: 85vh;
+    position: relative;
+    z-index: -1;
+    width: 100%;
+}
+
+.lamp {
+    position: relative;
+    z-index: 1;
+    left: 70%;
+    top: 0px;
+
+    opacity: 0;
+
+    animation-delay: 2s;
+    animation-name: lamp-animation;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+
+}
+
+
+@keyframes lamp-animation {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+.lamp>img:nth-child(2) {
+    opacity: 0;
+}
+
+.lamp>p {
+    position: absolute;
+    left: 80px;
+    top: 100px;
+
+    opacity: 80%;
+    color: white;
+}
+
+.light-wrapper h1,
+.light-wrapper p {
+    opacity: 0;
+    padding-top: 20px;
+}
+
+.light-wrapper h1 {
+    position: relative;
+    top: 100px;
+}
+
+.light-wrapper p {
+    text-align: justify;
+    max-width: 60%;
+    position: relative;
+    top: 100px;
+}
+
+/* input checked */
+input:checked~.light-wrapper {
+    background-color: rgb(220, 115, 59);
+    bottom: 180px;
+}
+
+input:checked~.lamp>p {
+    opacity: 0;
+}
+
+input:checked~.light-wrapper h1,
+input:checked~.light-wrapper p,
+input:checked~.light-wrapper h4 {
+    opacity: 1;
+
+    animation-name: light-con;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+
+@keyframes light-con {
+    from {
+        transform: translate(0px, 80px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
+}
+
+input:checked~.lamp>img:nth-child(2) {
+    opacity: 1;
+    position: relative;
+    top: 100px;
+    right: 92px;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+/* light media query */
+@media (max-width: 610px) {
+    .lamp {
+        right: 20%;
+        /* Center it more */
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width:992px) {
+    .light-wrapper p {
+        max-width: 77%;
+    }
+}
+
+@media (max-width:610px) {
+    .light-wrapper p {
+        max-width: 100%;
+    }
+
+    .lamp>img:nth-child(1) {
+        opacity: 20%;
+    }
+}
+
+@media (max-width:577px) {
+    .light-wrapper {
+        padding: 0px 20px;
+    }
+}
+
+@media (max-width:417px) {
+    .light-wrapper {
+        height: 110vh;
+    }
+
+    .light {
+        height: 110vh;
+    }
+}
+
+@media (max-width:432px) {
+    .light-wrapper {
+        height: 115vh;
+    }
+
+    .light {
+        height: 115vh;
+    }
+}
+
+@media (max-width:340px) {
+    .light-wrapper {
+        height: 120vh;
+    }
+
+    .light {
+        height: 120vh;
+    }
+}
+
+/* light sections end -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------  */
+
+
+
+
+/* phase section starts */
+.phase {
+    background-color: gray;
+    padding: 40px 0px;
+}
+.phase img{
+    width: 100%;
+    height: 300px;
+    width: 400px;
+    border-radius: 4px;
+}
+
+
+@media (max-width:992px){
+    .phase img{
+        width: 100%;
+        height: 250px;
+        width: 320px;
+    }
+}
+
+@media (min-width:768px) {
+    .phase p{
+        max-width: 70%;
+        text-align: justify;
+    }
+}
+
+@media (max-width:768px) {
+    .phase p{
+        text-align: justify;
+        width: 100% ;
+    }
+}
+
+@media (max-width:577px) {
+    .phase {
+        padding: 20px 24px;
+    }
+}
+
+@media (max-width:358px){
+    .phase img{
+        width: 100%;
+        height: 180px;
+        width: 280px;
+    }
+}
+/* phase section ends---------------------------------------------------------------------------------------------------------------------------------- */
+
+
+/* slider section   */
+.slider{
+    height: 60vh;
+    background-color: black;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+/* slide content */
+.slide-content>h1{
+    margin-top: 40px;
+    opacity: 80%;
+    color: white;
+}
+.slide-content>p{
+    opacity: 65%;
+    color: white;
+}
+
+.slide-box{
+    position: relative;
+    width: max-content;
+    top: 60px;
+
+
+    display: flex;
+    align-items: center;
+    gap: 100px;
+
+
+    animation-name: scroll;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-fill-mode: none;
+
+}
+@keyframes scroll {
+    from{
+      transform: translate(0);
+    }
+    to{
+        transform: translate(-80%);
+    }
+}
+.box{
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 120px;
+    background-color: rgb(161, 177, 192);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    z-index: 0;
+
+    padding: 10px;
+
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;    
+    
+}
+.box h5{
+    font-size: 15px;
+}
+
+.box p {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.box:hover p {
+    display: block;
+    opacity: 1;
+    font-size: 10px;
+    text-align: justify;
+}
+
+.box:hover{
+    transform: scale(2,2);
+    transition: all 3s;
+    padding: 5px;
+}
+
+.box:hover h5{
+    display: none;
+}
+
+.slide-box:hover {
+    animation-play-state: paused;
+  }
+
+  /* media queries */
+
+
+  @media (max-width:577px) {
+    .slide-content {
+        padding: 0px 10px;
+    }
+}
+@media (max-width:992px) {
+    .slider{
+        height: 70vh;
+    }  
+}
+@media (max-width:474px) {
+    .slider{
+        height: 80vh;
+    }  
+}
+@media (max-width:435px) {
+    .slider{
+        height: 85vh;
+    }
+}

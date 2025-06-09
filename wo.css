@@ -1,0 +1,211 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+
+}
+
+/* common styles of font */
+
+.navbar a {
+    font-family: "IBM Plex Serif", serif;
+    font-weight: 200;
+    font-style: normal;
+
+    opacity: 90%;
+}
+
+h5 {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'brix';
+    src: url('./Fonts/highvoltage_rough/HighVoltage\ Rough.ttf') format('truetype'); /* Or .woff/.otf */
+  }
+h2{
+    font-family: 'brix', sans-serif;
+    text-transform: uppercase;
+}
+@font-face {
+    font-family: 'benz';
+    src: url('./Fonts/benz_grotesk/Benz\ Grotesk.ttf') format('truetype');
+}
+
+h1 {
+    font-family: 'benz', sans-serif;
+}
+
+body {
+    background-color: black;
+}
+
+/* navbar section */
+.navbar {
+    background-color: #3a3a3a !important;
+    padding: 20px 0px;
+    height: 15vh;
+
+    opacity: 1;
+
+    animation-name: navbar-1;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes navbar-1 {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+.navbar a {
+    color: white !important;
+}
+
+.dropdown-menu {
+    background-color: #252525 !important;
+}
+
+.navbar h5 {
+    color: white;
+    opacity: 85%;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    margin-left: 10px;
+
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(247, 236, 236, 0.3);
+    /* soft white glow */
+}
+
+@media (max-width:992px) {
+    .navbar-toggler {
+        padding-bottom: 20px;
+    }
+
+    .navbar img {
+        margin-top: -15px;
+    }
+
+    .navbar h5 {
+        margin-top: 15px;
+    }
+
+}
+
+/* Apply only on screens smaller than 992px */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background: rgba(255, 255, 255, 0.1);
+        /* Transparent white */
+
+        backdrop-filter: blur(10px);
+        /* Glass effect */
+
+        -webkit-backdrop-filter: blur(10px);
+        /* Safari support */
+
+        border-radius: 5px;
+        padding: 1rem;
+        margin-top: 10px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        z-index: 999 !important;
+    }
+
+    .navbar {
+        position: relative;
+        z-index: 1000;
+    }
+}
+/* navbar ends --------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+/* world starts */
+.world{
+    padding: 30px 0px;
+    background-color: orange;
+}
+.world-wrapper span{
+   color: red;
+}
+/* mmedia query for world */
+@media (max-width:500px) {
+    .world{
+        padding: 20px 40px;
+    }
+}
+
+
+
+
+
+.movies{
+    padding: 30px 0px;
+    background-color: rgb(40, 40, 40);
+    color: white;
+}
+.im-fit{
+    width: 400px;
+    height: 400px;
+    background-color: #a0a0a0;
+}
+.im-fit>img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+h2{
+    color: red;
+}
+
+/* media query for moviies */
+@media (max-width:1200px) {
+    .im-fit{
+        width: 300px;
+        height: 300px;
+    }
+}
+@media (max-width:992px) {
+    .im-fit{
+        width: 280px;
+        height: 280px;
+    }
+}
+@media (max-width:500px) {
+    .movies>div>div{
+        text-align: center;
+    }
+    .im-fit{
+        margin-left: 20%;
+    }
+    .movies>div>div>div{
+        padding: 20px;
+    }
+}
+
+@media (max-width:460px) {
+    .im-fit{
+        margin-left: 10%;
+    }
+}
+@media (max-width:367px) {
+    .im-fit{
+        margin-left: 4%;
+    }
+}
